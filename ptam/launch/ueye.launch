@@ -39,11 +39,6 @@
 	</node>
 	<node pkg="nodelet" type="nodelet" name="framerate_nodelet" args="load ueye/FramerateNodelet ueye_manager"/>
 
-
-	<node name="ptam" pkg="ptam" type="ptam" clear_params="true" output="screen">
-		<remap from="image" to="/image_raw" />
-		<remap from="pose" to="pose" />
-		<rosparam file="$(find ptam)/PtamFixParams.yaml"/>
-	</node>
+		<!--remap from="image" to="/image_raw" /-->
 </launch>
 

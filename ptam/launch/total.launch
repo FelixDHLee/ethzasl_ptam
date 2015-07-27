@@ -45,5 +45,21 @@
 		<remap from="pose" to="pose" />
 		<rosparam file="$(find ptam)/PtamFixParams.yaml"/>
 	</node>
-</launch>
 
+	<node name="fcu" pkg="asctec_hl_interface" type="hl_node" output="screen" clear_params="true">
+		<rosparam file="$(find asctec_hl_interface)/launch/fcu_parameters.yaml" />
+		<rosparam file="$(find asctec_hl_interface)/launch/ssdk_param_ptam.yaml" />
+	</node>
+
+	<node name="pose_sensor" pkg="ssf_updates" type="pose_sensor" clear_params="true" output="screen">
+		<remap from="ssf_core/hl_state_input" to="/fcu/ekf_state_out" />
+		<remap from="ssf_core/correction" to="/fcu/ekf_state_in" />
+		<remap from="ssf_core/pose_measurement" to="/vslam/pose" />
+		<remap from="ssf_core/pose" to="/fcu/pose" />
+	<rosparam file="$(find ssf_updates)/pose_sensor_fix.yaml"/>
+	</node>
+
+	<node name="waypoint_server" pkg="asctec_hl_interface" type="waypoint_server" output="screen">
+	</node>
+
+</launch>

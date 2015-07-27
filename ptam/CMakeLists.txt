@@ -124,7 +124,7 @@ target_link_libraries(ptam ${PTAM_LIBRARIES} ${OpenCV_LIBS} ${catkin_LIBRARIES})
 
 # Camera calibrator 
 add_executable(cameracalibrator ${CALIBRATOR_FILES})
-add_dependencies(cameracalibrator DEPS ${${PROJECT_NAME}_EXPORTED_TARGETS}})
+add_dependencies(cameracalibrator DEPS ${${PROJECT_NAME}_EXPORTED_TARGETS} ${PROJECT_NAME}_gencfg)
 target_link_libraries(cameracalibrator ${PTAM_LIBRARIES} ${OpenCV_LIBS} ${catkin_LIBRARIES})
 
 # PTAM remote control

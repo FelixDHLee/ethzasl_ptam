@@ -1,4 +1,4 @@
-gui: True
+gui: False
 ImageSizeX: 752
 ImageSizeY: 480
 ARBuffer_width: 1200
@@ -32,10 +32,15 @@ MaxStereoInitLoops: 4
 AutoInitPixel: 20
 
 # --- bluefox - low distort lens  --- 
-Cam_fx: 0.795574
-Cam_fy: 1.25149
-Cam_cx: 0.50417
-Cam_cy: 0.51687
-Cam_s: 0.482014
-# -----------------------------------
+#Cam_fx: 0.795574
+#Cam_fy: 1.25149
+#Cam_cx: 0.50417
+#Cam_cy: 0.51687
+#Cam_s: 0.482014
+# --- bluefox - high distort lens  --- 
+Cam_fx: 1.58086
+Cam_fy: 2.47932
+Cam_cx: 0.46417
+Cam_cy: 0.46687
+Cam_s: 1.15166
 
